@@ -1,0 +1,8 @@
+<!ELEMENT root (person+)>
+<!ELEMENT person (name, age, address, phone)>
+<!ELEMENT name (FirstName, LastName?)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
