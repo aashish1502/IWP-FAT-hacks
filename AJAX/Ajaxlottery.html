@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lottery</title>
+</head>
+
+<body>
+
+    <script>
+        
+            var XMLHttpRequestObj = false;
+
+        if (window.XMLHttpRequest) {
+            XMLHttpRequestObj = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            XMLHttpRequestObj = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        function getData(dataSource, divID)
+        {
+            if(XMLHttpRequestObj) {
+                var obj = document.getElementById(divID);
+                XMLHttpRequestObj.open("GET", dataSource);
+
+                XMLHttpRequestObj.onreadystatechange = function()
+                {
+                    if (XMLHttpRequestObj.readyState == 4 &&
+                    XMLHttpRequestObj.status == 200) {
+                        obj.innerHTML =
+                        XMLHttpRequestObj.responseText;
+                    }
+                }
+
+                XMLHttpRequestObj.send(null);
+            }
+        }
+
+    </script>
+
+    <form method="POST">
+
+        <label>Name:</label><br>
+        <input type="text" class="name" required><br>
+        <label>Your lucky number</label><br>
+        <input type="number" class="number"><br>
+        <input type="button" name="sub" id="sub" value="click Me" />
+
+    </form>
+
+    <div id="targetDiv">
+        <h1>Welcome to Lottery!</h1>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>First AJAX Application</title>
+<script language = "javascript">
+	var XMLHttpRequestObj = false;
+
+	if (window.XMLHttpRequest) {
+		XMLHttpRequestObj = new XMLHttpRequest();
+	} else if (window.ActiveXObject) {
+		XMLHttpRequestObj = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	function getData(dataSource, divID)
+	{
+		if(XMLHttpRequestObj) {
+			var obj = document.getElementById(divID);
+			XMLHttpRequestObj.open("GET", dataSource);
+
+			XMLHttpRequestObj.onreadystatechange = function()
+			{
+				if (XMLHttpRequestObj.readyState == 4 &&
+				 XMLHttpRequestObj.status == 200) {
+					obj.innerHTML =
+					XMLHttpRequestObj.responseText;
+				}
+			}
+
+			XMLHttpRequestObj.send(null);
+		}
+	}
+</script>
+</head>
+<body>
+	<H1>First Application using AJAX</H1>
+	<img src="image1.jpg" onmouseover = "getData('bangles.txt','targetDiv')">
+	<img src="image2.jpg" onmouseover = "getData('rings.txt','targetDiv')">
+	<img src="image3.jpg" onmouseover = "getData('necklaces.txt','targetDiv')">
+	<div id="targetDiv">
+		<h1>Welcome to my Jewelery Showroom!</h1>
+	</div>
+</body>
+</HTML>
