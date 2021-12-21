@@ -4,12 +4,13 @@
 <head>
     <title>Lottery</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <body>
 
     <script>
         
-            var XMLHttpRequestObj = false;
+        var XMLHttpRequestObj = false;
 
         if (window.XMLHttpRequest) {
             XMLHttpRequestObj = new XMLHttpRequest();
@@ -17,9 +18,19 @@
             XMLHttpRequestObj = new ActiveXObject("Microsoft.XMLHTTP");
         }
 
-        function getData(dataSource, divID)
+        
+
+        $(document).ready(function () {
+            $("form").submit(function(e){
+                e.preventDefault();
+            });
+        });
+
+        function getData(divID)
         {
             if(XMLHttpRequestObj) {
+                var dataSource = $('#num').val()+".txt";
+                console.log(dataSource);
                 var obj = document.getElementById(divID);
                 XMLHttpRequestObj.open("GET", dataSource);
 
@@ -27,8 +38,7 @@
                 {
                     if (XMLHttpRequestObj.readyState == 4 &&
                     XMLHttpRequestObj.status == 200) {
-                        obj.innerHTML =
-                        XMLHttpRequestObj.responseText;
+                        obj.innerHTML = XMLHttpRequestObj.responseText;
                     }
                 }
 
@@ -38,13 +48,13 @@
 
     </script>
 
-    <form method="POST">
+    <form method="POST" onsubmit="getData('targetDiv')">
 
         <label>Name:</label><br>
         <input type="text" class="name" required><br>
         <label>Your lucky number</label><br>
-        <input type="number" class="number"><br>
-        <input type="button" name="sub" id="sub" value="click Me" />
+        <input type="number" class="num" id="num"><br>
+        <input type="submit" name="sub" id="sub" value="Submit"/>
 
     </form>
 
