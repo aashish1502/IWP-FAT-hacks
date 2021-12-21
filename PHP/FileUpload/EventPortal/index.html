@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+    <title>Event Registration</title>
+</head>
+<body>
+    
+    <h1>SWC Event Registration! </h1>
+
+    <form method="POST" action="upload.php" enctype="multipart/form-data">
+        <label>Club/Chapter name</label><span>*</span>
+        <select name="Organization">
+            <option value="Club A">Club A</option>
+            <option value="Club B">Club B</option>
+            <option value="Club C">Club C</option>
+            <option value="Club D">Club D</option>
+        </select><br><br>
+        
+        <label>Date</label><span>*</span><br>
+        <input type="date" name = "date" required><br>
+        
+        <label>Location</label><span>*</span><br>
+        <input type="text" name="location" required><br>
+
+        <label>Sponsor Details(if any)</label><br>
+        <input type="text" name="sponsor"><br>
+
+        <label>Chief Guest(if any)</label><br>
+        <input type="text" name="chiefGuest"><br>
+
+        <label>Expense</label><span>*</span><br>
+        <input type="file" name="expense" required><br>
+
+        <label>Photos</label><span>*</span><br>
+        <input type="file" multiple="multiple" name="photos[]" required><br><br>
+
+        <input type="submit" name="submit">
+
+    </form>
+
+</body>
+</html>
