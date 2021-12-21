@@ -7,7 +7,6 @@ if (isset($_POST['submit'])) {
 if (isset($_POST['update'])) {
     mysqli_query($conn, "UPDATE customers set id='" . $_POST['id'] . "', name='" . $_POST['name'] . "', address='" . $_POST['address'] . "' ,phone='" . $_POST['phone'] . "' WHERE id='" . $_POST['id'] . "'");
     $message = "Record Modified Successfully";
-    
 }
 
 ?>
@@ -18,12 +17,7 @@ if (isset($_POST['update'])) {
 </head>
 
 <body>
-    <form method="post" action="">
-        Customer ID to be updated:
-        <input type="text" name="id">
-        <br />
-        <input type="submit" name="submit" value="submit" />
-    </form>
+    
     <form name="frmUser" method="post" action="">
         <div><?php if (isset($message)) {
                     echo $message;
