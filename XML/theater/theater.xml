@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "theater.dtd">
+<?xml-stylesheet href="theater.xsl" type="text/xsl"?>
+<root>
+    <theater>
+        <Tid>T1</Tid>
+        <Theater_Name>Ram</Theater_Name>
+        <Stars>2</Stars>
+        <isAC>false</isAC>
+        <Location>Pondy</Location>
+    </theater>
+    <theater>
+        <Tid>T2</Tid>
+        <Theater_Name>Balaji</Theater_Name>
+        <Stars>2</Stars>
+        <isAC>false</isAC>
+        <Location>Bangalore</Location>
+    </theater>
+    <theater>
+        <Tid>T3</Tid>
+        <Theater_Name>PVR Complex</Theater_Name>
+        <Stars>3</Stars>
+        <isAC>true</isAC>
+        <Location>Chennai</Location>
+    </theater>
+    <theater>
+        <Tid>T4</Tid>
+        <Theater_Name>Satyam Complex</Theater_Name>
+        <Stars>3</Stars>
+        <isAC>true</isAC>
+        <Location>Chennai</Location>
+    </theater>
+    <theater>
+        <Tid>T5</Tid>
+        <Theater_Name>Avirami Complex</Theater_Name>
+        <Stars>1</Stars>
+        <isAC>true</isAC>
+        <Location>Mumbai</Location>
+    </theater>
+</root>

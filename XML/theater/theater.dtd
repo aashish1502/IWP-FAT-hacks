@@ -1,0 +1,7 @@
+<!ELEMENT root (theater+)>
+<!ELEMENT theater (Tid, Theater_Name, Stars, isAC, Location)>
+<!ELEMENT Tid (#PCDATA)>
+<!ELEMENT Theater_Name (#PCDATA)>
+<!ELEMENT Stars (#PCDATA)>
+<!ELEMENT isAC (#PCDATA)>
+<!ELEMENT Location (#PCDATA)>
