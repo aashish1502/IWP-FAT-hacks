@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<real-estate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="real_estate.xsd">
+    <Agencies>
+        <name>Aashish</name>
+        <email>aashish@gmail.com</email>
+        <phone>9876564321</phone>
+    </Agencies>
+    <Owner>
+        <name>Sanskrita</name>
+    </Owner>
+    <Properties>
+        <name>Adonis Group</name>
+        <numberofflats>5</numberofflats>
+    </Properties>
+    <Flat>
+        <name>Adonis Residency</name>
+        <description>A 3bhk flat</description>
+        <rate>700000</rate>
+    </Flat>
+</real-estate>

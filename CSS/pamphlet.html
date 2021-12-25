@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="http://fonts.cdnfonts.com/css/nickainley" rel="stylesheet" />
+		<title>Document</title>
+		<style>
+			body {
+				background-color: bisque;
+			}
+			.grid-container {
+				display: grid;
+				grid-gap: 50px;
+				grid-template-columns: 48% 48%;
+			}
+			.grid-item {
+				background-color: #222;
+				border: 1px solid rgba(0, 0, 0, 0.8);
+				text-align: center;
+				color: white;
+				filter: drop-shadow(10px 10px 4px #1b1b1d);
+			}
+			h1 {
+				text-align: center;
+				color: red;
+			}
+			h4,
+			h2 {
+				color: red;
+			}
+			.title {
+				font-family: 'Nickainley', sans-serif;
+				text-align: center;
+				font-size: 36px;
+				margin-top: -3%;
+				font-weight: bolder;
+			}
+			.flex-container {
+				display: flex;
+				flex-direction: row;
+			}
+			.flex-item {
+				margin: 10px;
+				margin-top: 10%;
+				padding: 20px;
+				font-size: 30px;
+				flex: 30%;
+			}
+			.flex-item-mid {
+				margin: 10px;
+				padding: 20px;
+				flex: 70%;
+			}
+			.ribbon {
+				color: white;
+				position: relative;
+			}
+			.ribbon img {
+				margin-top: -10%;
+				z-index: -10;
+			}
+			.ribbon p {
+				margin-top: -37%;
+			}
+            .box{
+                border: 1px solid white; 
+                margin: 20px 20%; 
+                padding: 20px;
+            }
+		</style>
+	</head>
+	<body>
+		<h1>BARBER</h1>
+		<div class="title">Shop</div>
+		<div class="grid-container">
+			<div class="grid-item">
+				<h4>PROUDLY PRESENT TO YOU OUR NEW</h4>
+				<h1 style="color: white">BARBER</h1>
+				<div>
+					EST &nbsp;<span class="title" style="color: red"
+						>&nbsp; Shop &nbsp;</span
+					>&nbsp; 1978
+				</div>
+				<div class="flex-container">
+					<div class="flex-item">
+						<div style="border: 1px solid red; padding: 20px">
+							<img
+								src="https://n4.sdlcdn.com/imgs/j/e/z/Verceys-Hair-Cut-S-118-SDL460747969-3-63874.jpg"
+								width="60%"
+							/>
+							<p style="font-size: small">HAIRCUT</p>
+						</div>
+					</div>
+					<div class="flex-item-mid">
+						<img
+							src="https://t3.ftcdn.net/jpg/04/08/78/70/360_F_408787051_Eg4HvlHdoTUlGMOrzlSMXy65eI3989sD.jpg"
+							width="100%"
+						/>
+					</div>
+					<div class="flex-item">
+						<div style="border: 1px solid red; padding: 20px">
+							<img
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR03om-gzL2Ukzn2W_Y0ZVh-jTiEeOgRJvPzA&usqp=CAU"
+								width="60%"
+							/>
+							<p style="font-size: small">SHAVING</p>
+						</div>
+					</div>
+				</div>
+				<div class="ribbon">
+					<img src="banner.png" width="60%" />
+					<p>SPECIAL OFFER MAY 22</p>
+				</div>
+				<div style="margin-top: 10%">
+					<h2>50% OFF</h2>
+					<p>ON ALL HAIRCUTS</p>
+					<p>LOREM IPSUM SET AMET</p>
+				</div>
+			</div>
+			<div class="grid-item">
+				<div>
+					<h1 style="color: white">BARBER</h1>
+					EST &nbsp;<span class="title" style="color: red"
+						>&nbsp; Shop &nbsp;</span
+					>&nbsp; 1978
+				</div>
+				<div class="box">
+					PRICELIST AND SPECIAL OFFER
+				</div>
+				<div class="flex-container">
+					<div class="flex-item">
+						<div>
+							<img
+								src="https://n4.sdlcdn.com/imgs/j/e/z/Verceys-Hair-Cut-S-118-SDL460747969-3-63874.jpg"
+								width="60%"
+							/>
+						</div>
+					</div>
+					<div class="flex-item-mid">
+						<div>
+							<p>
+								HAIRCUT.........................................................0.00
+							</p>
+							<p>
+								SENIOR
+								CUT...................................................0.00
+							</p>
+							<p>
+								CHILDREN......................................................0.00
+							</p>
+							<p>
+								BEARD TRIM..................................................0.00
+							</p>
+							<p>
+								SHAVE.............................................................0.00
+							</p>
+							<p>HEAD MESSAGE...........................................0.00</p>
+						</div>
+					</div>
+					<div class="flex-item">
+						<div>
+							<img
+								src="https://n4.sdlcdn.com/imgs/j/e/z/Verceys-Hair-Cut-S-118-SDL460747969-3-63874.jpg"
+								width="60%"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="box">
+					<p>OPENING HOURS: 10AM - 9PM</p>
+					<p>YOUR PLACE, 9th MAINSTREET , YOUR CITY</p>
+					<p>LOREM IPSUM SET AMET</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

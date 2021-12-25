@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        const countries = ["India","Srilanka","Pakistan","England","Australia","West Indies","South Africa"];
+        const captains = ["Virat","Mathews","Afridi","Root","Smith","Sammy","De kock"];
+        let country = prompt("Please enter your country", "India");
+        const fetch = search(country)
+        const index=-1;
+        function search(country) {
+            for (let i = 0; i < countries.length; i++) {
+                const element = countries[i];
+                if(element==country){
+                    index=i;
+                }
+            }
+            return captains[index];
+        }
+        if(fetch != null){
+            document.getElementById("demo").innerHTML =fetch;
+        }
+        if (fetch == null) {
+            document.getElementById("demo").innerHTML ="Not Present";
+        }
+    </script>
+</body>
+</html>
