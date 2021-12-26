@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE root SYSTEM "orderedbook.dtd"> -->
+<?xml-stylesheet href="orderedbook.xsl" type="text/xsl"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="orderedbook.xsd">
+    <orderedbook>
+        <number>1</number>
+        <custID>1</custID>
+        <customer>Helger</customer>
+        <shippingaddress>180 Quinn Gate</shippingaddress>
+        <title>Database Management System</title>
+        <author>Ramakrishna</author>
+    </orderedbook>
+    <orderedbook>
+        <number>2</number>
+        <custID>2</custID>
+        <customer>Sam</customer>
+        <shippingaddress>32 Vienne Street</shippingaddress>
+        <title>Database Management System</title>
+        <author>Ramakrishna</author>
+    </orderedbook>
+    <orderedbook>
+        <number>3</number>
+        <custID>3</custID>
+        <customer>Peter</customer>
+        <shippingaddress>180 Quinn Gate</shippingaddress>
+        <title>Distributed System</title>
+        <author>Ramakrishna</author>
+    </orderedbook>
+</root>

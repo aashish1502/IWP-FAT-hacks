@@ -1,0 +1,8 @@
+<!ELEMENT root (orderedbook+)>
+<!ELEMENT orderedbook (number, custID, customer, shippingaddress, title, author )>
+<!ELEMENT number (#PCDATA)>
+<!ELEMENT custID (#PCDATA)>
+<!ELEMENT customer (#PCDATA)>
+<!ELEMENT shippingaddress (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
