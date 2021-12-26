@@ -30,7 +30,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="" onsubmit="formValidate()" method="post">
+        <form onsubmit="return formValidate()" method="post">
             <div class="right">
                 <label for="date">Date: </label>
                 <input type="date" id="date" size="12px" required><br>
@@ -55,70 +55,65 @@
             </div>
 
             <label for="accno">Account No: </label>
-            <input type="number" id="accno" required><br><br>
+            <input type="text" id="accno" required><br><br>
 
             <div class="right">
-                <button type="submit" onclick="formValidate()">Submit</button>
+                <button type="submit">Submit</button>
             </div>
         </form>
     </div>
 
-    <script>
-        var date = document.getElementById("date").value;
-        var pay = document.getElementById("pay").value;
-        var rupees = document.getElementById("rupees").value;
-        var rs = document.getElementById("rs").value;
-        var accno = document.getElementById("accno").value;
-        console.log(pay);
+    <script type="text/javascript">
         function formValidate(){
+            var date = document.getElementById("date").value;
+            var pay = document.getElementById("pay").value;
+            var rupees = document.getElementById("rupees").value;
+            var rs = document.getElementById("rs").value;
+            var accno = document.getElementById("accno").value;
+            console.log(pay);
             //let alphabets = /^[a-zA-Z]*$/;
             console.log(pay);
-            if(pay.search(/^[a-zA-Z]*$/) === -1){
-                alert("Ok");
-                console.log("OK!!");
+            if(pay.search(/^[a-zA-Z ]*$/) === -1){
+                alert("Wrong Format for Pay!!!");
             }
 
             console.log(date);
-            if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(date)){
-                return false;
-            }
-            // Parse the date parts to integers
-            var parts = date.split("/");
-            var day = parseInt(parts[0], 10);
-            var month = parseInt(parts[1], 10);
-            var year = parseInt(parts[2], 10);
+            // if((/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(date))){
+            //     alert("Wrong Format for Date!!!");
+            // }
+            // // Parse the date parts to integers
+            // var parts = date.split("-");
+            // var day = parseInt(parts[0], 10);
+            // var month = parseInt(parts[1], 10);
+            // var year = parseInt(parts[2], 10);
 
-            // Check the ranges of month and year
-            if(year < 1000 || year > 3000 || month == 0 || month > 12)
-                return false;
+            // // Check the ranges of month and year
+            // if(year < 1000 || year > 3000 || month == 0 || month > 12)
+            //     return false;
 
-            var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+            // var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
-            // Adjust for leap years
-            if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-                monthLength[1] = 29;
-
-            // Check the range of the day
-            return day > 0 && day <= monthLength[month - 1];
+            // // Adjust for leap years
+            // if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+            //     monthLength[1] = 29;
 
             console.log(rupees);
-            if(rupees.search(/^[a-zA-Z]*$/) === -1){
-                alert("Ok");
-                console.log("OK!!");
+            if(rupees.search(/^[a-zA-Z ]*$/) === -1){
+                alert("Wrong Format for Amount!!!");
             }
 
             console.log(rs);
-            if(rs.search(/^[a-zA-Z]*$/) === -1){
-                alert("Ok");
-                console.log("OK!!");
+            if(!(/^[0-9]|,*$/.test(rs))){
+                alert("Wrong Format for Rupees!!!");
             }
 
             console.log(accno);
-            if(accno.search(/^[0-9.,]+$/) === -1){
-                alert("Ok");
-                console.log("OK!!");
+            if(accno.search(/^[0-9 ]+$/) === -1){
+                alert("Wrong format for Account Number");
             }
-
+            return false;
+            // // Check the range of the day
+            // return day > 0 && day <= monthLength[month - 1];
         }
     </script>
 
