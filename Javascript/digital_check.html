@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check</title>
+    <style>
+        .container{
+            font-family: Calibri;
+            color: darkblue;
+            text-align: left;
+            padding: 50px;
+            height: 250px;
+            width: 700px;
+            background-color: pink;
+        }
+        input[type="text"], input[type="number"], textarea {
+            background-color : pink; 
+            border-color: darkblue;
+            border-top-style: none;
+            border-left-style: none;
+            border-right-style: none;
+            outline: none;
+        }
+        .right{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" onsubmit="formValidate()" method="post">
+            <div class="right">
+                <label for="date">Date: </label>
+                <input type="date" id="date" size="12px" required><br>
+                <label>D</label><label>D/</label>
+                <label>M</label><label>M/</label>
+                <label>Y</label><label>Y</label>
+                <label>Y</label<label>Y</label><br><br>
+
+            </div>
+        
+            <label for="pay">Pay: </label>
+            <input type="text" id="pay" size="95px" required><br><br><br>
+
+            <div>
+                <label for="rupees">Rupees: </label>
+                <input type="text" id="rupees" size="60px" required>
+            </div>
+
+            <div class="right">
+                <label for="rs">Rs: </label>
+                <input type="text" id="rs" required><br><br>
+            </div>
+
+            <label for="accno">Account No: </label>
+            <input type="number" id="accno" required><br><br>
+
+            <div class="right">
+                <button type="submit" onclick="formValidate()">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var date = document.getElementById("date").value;
+        var pay = document.getElementById("pay").value;
+        var rupees = document.getElementById("rupees").value;
+        var rs = document.getElementById("rs").value;
+        var accno = document.getElementById("accno").value;
+        console.log(pay);
+        function formValidate(){
+            //let alphabets = /^[a-zA-Z]*$/;
+            console.log(pay);
+            if(pay.search(/^[a-zA-Z]*$/) === -1){
+                alert("Ok");
+                console.log("OK!!");
+            }
+
+            console.log(date);
+            if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(date)){
+                return false;
+            }
+            // Parse the date parts to integers
+            var parts = date.split("/");
+            var day = parseInt(parts[0], 10);
+            var month = parseInt(parts[1], 10);
+            var year = parseInt(parts[2], 10);
+
+            // Check the ranges of month and year
+            if(year < 1000 || year > 3000 || month == 0 || month > 12)
+                return false;
+
+            var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+            // Adjust for leap years
+            if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+                monthLength[1] = 29;
+
+            // Check the range of the day
+            return day > 0 && day <= monthLength[month - 1];
+
+            console.log(rupees);
+            if(rupees.search(/^[a-zA-Z]*$/) === -1){
+                alert("Ok");
+                console.log("OK!!");
+            }
+
+            console.log(rs);
+            if(rs.search(/^[a-zA-Z]*$/) === -1){
+                alert("Ok");
+                console.log("OK!!");
+            }
+
+            console.log(accno);
+            if(accno.search(/^[0-9.,]+$/) === -1){
+                alert("Ok");
+                console.log("OK!!");
+            }
+
+        }
+    </script>
+
+</body>
+</html>
