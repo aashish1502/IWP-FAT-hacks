@@ -63,7 +63,9 @@ fs.readFile('./index.html', function (err, html) {
 						})
 					})
 					console.log(obj)
-					response.end('Age :'+age+"BMI is :"+bmi)
+					response.write("Age :"+age)
+					response.write("BMI :"+bmi)
+					response.end()
 				})
 			}
 		})
