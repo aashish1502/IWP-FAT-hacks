@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			form input {
+				padding: 0.7em 1em;
+				width: 40%;
+			}
+			form span {
+				padding: 0.6em 1em;
+			}
+			form > button {
+				padding: 1.1em;
+				margin: 1em 1em;
+				cursor: pointer;
+			}
+			#dis {
+				display: none;
+			}
+			table,
+			th,
+			td {
+				border: 1px solid black;
+			}
+
+			table {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="get" id="formSubmission" autocomplete="on">
+			<fieldset>
+				<legend>Customer Info</legend>
+				<label>Name:</label>
+				<input
+					type="text"
+					name="name"
+					id="name"
+					placeholder="Enter your name"
+					autofocus
+					required
+				/><br /><br />
+				<label>Telephone:</label>
+				<input
+					type="text"
+					name="phone"
+					id="phone"
+					placeholder="Pattern: 234-567-8910"
+					pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
+					autofocus
+					required
+				/><br /><br />
+				<label>Email:</label>
+				<input
+					type="email"
+					name="email"
+					id="email"
+					placeholder="Enter your email"
+					autofocus
+					required
+				/>
+			</fieldset>
+			<fieldset>
+				<legend>Books</legend>
+				<input type="text" name="book" id="book" autofocus required />
+				<label>Quantity(Maximum 5):</label>
+				<input
+					type="number"
+					name="qty"
+					id="qty"
+					min="1"
+					max="10"
+					autofocus
+					required
+				/><br /><br />
+			</fieldset>
+			<button type="submit">Submit</button>
+		</form>
+		<div id='dis' style="display: none">
+			<table id="mtable">
+				<tr>
+					<th>Name</th>
+					<th>Telephone</th>
+					<th>Email</th>
+					<th>Book</th>
+					<th>Quantity</th>
+				</tr>
+		<!-- </div> -->
+		<script>
+			let form = document.getElementById('formSubmission')
+
+			let table = document.getElementById('mtable')
+
+			var tblBody = document.createElement('tbody')
+			form.addEventListener('submit', (e) => {
+				e.preventDefault()
+				submit()
+			})
+
+			const submit = () => {
+				document.getElementById('dis').style.display = 'block'
+				// form.style.display = 'none'
+				let name = document.getElementById('name').value
+				let phone = document.getElementById('phone').value
+				let email = document.getElementById('email').value
+				let book = document.getElementById('book').value
+				let qty = document.getElementById('qty').value
+
+				let newArray = [name, phone, email, book, qty]
+				console.log(newArray)
+				let tr = document.createElement('tr')
+				newArray.forEach((item) => {
+					var td = document.createElement('td')
+					var text = document.createTextNode(item)
+					td.appendChild(text)
+					tr.appendChild(td)
+				})
+				table.appendChild(tr)
+				table.appendChild('</table>')
+				form.reset()
+			}
+		</script>
+	</body>
+</html>
