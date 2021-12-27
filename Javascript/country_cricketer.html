@@ -12,9 +12,11 @@
         const countries = ["India","Srilanka","Pakistan","England","Australia","West Indies","South Africa"];
         const captains = ["Virat","Mathews","Afridi","Root","Smith","Sammy","De kock"];
         let country = prompt("Please enter your country", "India");
+        console.log(country)
         const fetch = search(country)
-        const index=-1;
+        var index=-1;
         function search(country) {
+            console.log(country)
             for (let i = 0; i < countries.length; i++) {
                 const element = countries[i];
                 if(element==country){
