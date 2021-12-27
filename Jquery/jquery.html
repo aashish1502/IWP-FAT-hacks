@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <style>
+            #box{
+                display: flex;
+                flex-direction: row;
+            }
+            #newElement{
+                width: auto;
+                height: auto;
+                border: 5px solid #000;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .newBox{
+                position: relative;
+                width: 80px;
+                height: 80px;
+                padding: 5px;
+                margin: 5px;
+                border: 2px solid #000;
+            }
+            .newBox{
+                border-radius: 0;
+            }
+        </style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script>
+            function addContainer() {
+                $("#box").append('<div id = "newElement">');
+            }
+			function addBox() {
+                $("#newElement").append('<div class = "newBox">');
+            }
+            function color() {
+                const r = Math.floor(Math.random()*255)
+                const g = Math.floor(Math.random()*255)
+                const b = Math.floor(Math.random()*255)
+                $(".newBox").css('border',`2px solid rgb(${r},${g},${b})`)
+                console.log(`2px solid rgb(${r},${g},${b})`)
+            }
+            let flag = true
+            function toggle() {
+                if (flag) {
+                    $('.newBox').css('border-radius','5px')
+                    flag=false
+                }else{
+                    $('.newBox').css('border-radius','0px')
+                    flag=true
+                }
+            }
+		</script>
+	</head>
+	<body>
+        <div id="box"></div>
+		<button id="add" onclick="addContainer()">ADD CONTAINER BOX</button>
+        <button onclick="addBox()">ADD A NEW BOX</button>
+        <button onclick="color()">COLORS</button>
+        <button onclick="toggle()">TOGGLE ROUNDED BORDERS</button>
+        
+	</body>
+</html>
